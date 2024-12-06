@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+</head>
+<body>
+    <h1>Введите данные:</h1>
+    <form method="post">
+        {% csrf_token %}
+        Текст:<br>
+        <textarea name="text" rows="4" cols="50"  title="Только английские буквы и пробелы">{{ text }}</textarea><br><br>
+        Название:<br>
+        <input type="text" name="title" value="{{ title }}" required  title="Только английские буквы и пробелы"><br><br>
+        <button type="submit">Сохранить</button>
+    </form>
+
+    <hr>
+    <h2>Сохраненные данные:</h2>
+    <p>Текст: {{ text }}</p>
+    <p>Название: {{ title }}</p>
+</body>
+</html>
